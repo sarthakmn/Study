@@ -1,0 +1,43 @@
+ARM and AVR interview questions 
+
+
+1. What is microcontroller?
+2. what is microprocessor?
+3. What is the difference between microcontroller and microprocessor?
+4. what is embedded system in computer system
+5. what are the essential components of embedded system?
+6. what does DMA address will deal with?
+7. Explain the difference between SRAM and DRAM.
+8. Explain what is interrupt latency? How can you reduce it?
+9. Eplain any 3 Busses used for communication in embedded system.
+10. Explain in brief I2C communication protocol?
+11. What is difference between Timer and counter?
+12. Explain USB in detail.
+13. Explain UART in short.
+14. Eplain USART and SPI.
+!5. Explain CAN protocol?
+16. Which is the best communication protocol? and why?
+17. Explain what is Watchdog Timer?
+18. What are the IPC's you have used in ARM programming?
+19. which language you used in ARM programming?
+20. Explain ARM?
+21. what is Baud rate?
+22. what is bit rate?
+23. explain difference between baud rate and bit rate.
+24. explain pull-up and pull-down resistance.
+25. Describe the address modes of AVR.
+26. Describe the interrupt structure of AVR microcontroller.(imp hai)(you must know all the interuct their seq, interupt number etc etc...)
+27. Explain ADC and its type used in Microcontroller.
+28. Have you use RTC clock? explain how it works.
+29. Explain PWM, how you use?
+30. Write a C code to display the message "Hi Motu" serially for 50 times at baud rate of 2400, 8-bit, 1 stop bit, No parity.(XTAL 16MHz)
+31. Explain Timers of AVR
+32. What are the Types of Cortex M series? which one you used"?
+33. what is the difference between von-neumann architecture and Harward architecture.
+34. What is ISR?
+35. What is a nested interrupt?
+36. Explain NVIC and systick in ARM cortex.
+37. what is the diffence between I2C and SPI?
+38. What is the difference between the Asynchronous and synchronous communication?
+39. what is MAchine cycle and instruction cycle
+40. 

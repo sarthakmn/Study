@@ -1,0 +1,20 @@
+Expleo 
+
+1. Explain Cdac project.Your role in cdac project.
+2. Explain BE project. Your role in that project.
+3. What is dynamic memory allocation? In how many ways we can do that.
+4. Explain different storage classes with example
+5. Qns related to constants and pointers.
+6. 6-7 C snippets.
+7. What is link list.
+8. How will you perform operation on n'th element of link list
+9. What is doubly circular link list.Practical use of it.
+10. What is the difference between process and thread.
+11. Explain fork with example.
+12. What is deadlock. deadlock conditions.Deadlock avoidance.
+13. Which are CPU scheduling algorithms. Explain them.
+14. What is difference between macro and function
+15. Advantages of using macro 
+16. What is function overloading in c++. Expalin with exaample
+17. What is polymorphism. Expalin with example.
+

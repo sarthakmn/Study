@@ -1,0 +1,27 @@
+1. Add operation on Linked List.
+
+2. Write a code for Circular Linked List.
+
+3. WAP to check whether a string is palindrome.
+
+4. Set and reset nth bit of a number.
+
+5. How to add module into kernel?
+
+6. What is the differnce between insmod and modprobe?
+
+7. Inserted modules can be seen in which directory?
+
+8. What is Demand Paging?
+
+9. What is thrashing?
+
+10. What is hashing?
+
+11. Give solution for collision in hashtable.
+
+12. Explain OSI Model.Explain the flow when we hit a url to reach Google server.
+
+13. To send 10MB of data which IPC would be the best?
+
+14. Difference between TCP and UDP.

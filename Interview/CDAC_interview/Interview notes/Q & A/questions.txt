@@ -1,0 +1,219 @@
+First vicharala C language sathi kiti rating deshil swatala
+String chi length calculate karayala lawanara program lihayala lawala.
+Storage class vicharala, mag extern storage class cha program lihayala lawala
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Brief Q :
+Recursion (which seg is in use: code, data, stack?)
+Why we need function ?
+Macro: Parameterized Macro
+Union limitations 
+Structure in EOS
+IPC
+Semaphore 
+Producer Consumer
+ARM
+Project Intro & Debugging
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is volatile keyword?
+Difference between microcontroller nd process?
+Const volatile keyword difference?
+Palindrome program?
+Auto register extern static?
+Static auto difference?
+Structure union difference?
+How do u check whether ptr is null or not?
+8bit 32bit difference?
+Static functions?
+Interrupt?
+Interface microcontroller with motor?
+Project in deep.
+
+HR-
+What would you change in this world?
+If i assign you 10 employees how you would manage the team?
+What you think about location?
+Could you able to relocate?
+Why we should hire you?
+What is more imp to you job or your interest?
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Introduction of Project
+C programming 
+Do you know about c++
+Networking question 
+Stm board
+Which field would you like to work
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+I got questions on...
+
+1. Rate yourself in c skills
+2. Write a program to find length of string.
+3. Storage class, explain there functionality
+4. Write a program where extern storage class is used.
+5. Write a program to find repeated numbers in an array, (repeating more than twice).
+6. Void pointers and there application..
+7. Project (I did mistake here, I told NXP guy lot about TI IC of beaglebone, and it was like his mood went off. This point he dropped questioning on project altogether)
+8. Defination of OS..
+9. Concept of multithreading, he told to write an application for multithreading.
+10. Problem occurs in multithreading --> I told about shared memory problem.
+11. Solution of shared memory problem with semaphore and mutex.
+12. Mutex ki functionality pe thoda deep question puche..
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.binary search using recursion
+2. delete element based on element in linklist
+3.3d array element accessing...
+4.deep rtos questions
+NOTE :write program based on cpu cycles.... like no present of u necessary condition check, return statements, loops
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Interview questions 
+
+1 . How to set the 3 bit in the given binary like 11100011?
+2. How we can find the middle element in array ?
+3. Write a code to set the bit ?
+4. What is pointer?
+5 . Doble linklist and write a code of link list using structure
+6. Major project of engineering college explain the role of your and explain the code part that which you are used in you college majar project .
+7. Function and it's advantages .
+8. About your ccee marks .
+9.your resume - questions means if u have gap then discribe why and how
+10.Discribe whole project and your part of the project
+11.link list 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.two to 3 program with explanation: modified that program also 
+2.write Singly link list program
+3.program of reverse the number
+4.some questions on ARM/AVR microprocessor
+5.question on RTOS and microcontroller
+6.how do you write multiple variable 
+7.how to free reallocated memory
+8.use of volatile
+9.storage classes 
+10.scheduling
+11.thread 
+12.keywords related queries
+it was around 45 - 50 min
+
+ --------------------------------------------------------------------------------------
+
+Micron Company
+ 
+Introduction 
+C coding swap number and length of string without strlen 
+Explain above codes pura he will cross question for the same 
+Ready to switch location 
+Any questions
+
+Introduction 
+Your all project both college & cdac
+coding normal copy the strings from one to second with explanation
+linklist
+in which field are u intrested
+what type of the expectations of micron 
+where do u see yourself in 5 years
+question about micron company
+
+Python programming 
+BE project 
+Engineering project 
+5 programs
+
+ micron company
+1.self intro
+2.why did you join cdac
+3.whats u r fav subject there
+4.all questions were on kernel..
+--------------------------------------------------------------------------------------
+
+Western Digital interview
+
+Verbal technical question:-
+1.Describe btech project and cdac project
+2.Uart register
+3.storage class:- can we print address of variable 
+Which declare as register keyword? 
+4.volatile, why we and where we use volatile
+5.distiguish :-defination and declaration of variable, when will memory allocated
+6.pointer
+Char a
+Int*p= &a;
+Int*q =p+1;
+What will print p and q?? 
+7.How to find size of a variable without size of opertor?? 
+8.bitwise operator? 
+Odd even using bitwise operator
+9.interppt and polling
+10. How interppt wrk, what is the wrk of interppt handler
+11.Rtos vtask delay HAL delay
+
+Program:
+1.Bitwise :- check last bit set or reset
+2.pointer , function pointer, array of pointer difference and give one Code example
+3.linked list L…
+----------------------------------------------------------------------------------------
+
+Introduction 
+BE project 
+Cdac project (error which u are facing)
+1.Linked list 
+2. Sort array in descending order 
+3. Palindrome
+
+-----------------------------------------------------------------------------------------
+Introduction 
+BE project 
+Cdac project (error which u are facing)
+Fibanocci series 
+Count repeated number
+Count total repet number 
+Doubly circular linked list
+
+-----------------------------------------------------------------------------------------
+ introduction
+1.bit set program
+2.power of 2 program
+questions on spinlock, mutex, semaphore
+how to do you do synchronization using this techniques......
+------------------------------------------------------------------------------------------
+
+Introduction 
+What is RTos how differs from os
+1 Rtos vs os 
+2. Policy schdular 
+3.Time frame between fcfs and rtos .
+4. how we  Time slicing in rtos ?
+5. Kernal vs user space 
+6. Linux device driver how we use dealloack and where we use it .?
+7. Critical section and semaphore mutex.?
+8. Write a code to find the middle element of array ?
+9 .write a code to swap the numbers?
+10 .write the code to reverse the string and to calculate the length of the string ?
+11. Kernal latency 
+12.types of schdular in rtos .
+13. Valatile memory
+14.Semaphore 
+15.Reverse linked list 
+16.I2c 
+Python 
+Microcontroller
+------------------------------------------------------------------------------------------
+
+Innominds interview question:  
+1) rate yourself in c 
+2)basic questions on storage class data types 
+3)explain each data type in detail 
+4)explain each storage class in detail 
+5)write a program to swap two integers
+6)write program to reverse a string using pointers
+7)what is process,what is thread 
+8)what is linked list ,what are main components of embedded systems
+9)what is constant ,what is volatile 
+10)what is difference between file,program,application
+11)steps for c file compilation
+12)2 pseudo codes 
+13)why to use static in program ,what is an application of it ?
+LINK -----https://www.interviewbit.com/c-interview-questions/

@@ -1,0 +1,40 @@
+https://aticleworld.com/memory-layout-of-c-program/
+
+https://aticleworld.com/interview-questions-on-bitwise-operators-in-c/
+
+https://q4interview.com/company_interview_questions.php?c=46
+
+https://mindmajix.com/juniper-network-interview-questions
+
+https://www.wisdomjobs.com/e-university/embedded-c-interview-questions.html
+
+https://www.interviewbit.com/embedded-c-interview-questions/
+
+https://www.w3resource.com/c-programming-exercises/
+
+https://www.interviewbit.com/c-interview-questions/
+
+https://www.simplilearn.com/tutorials/c-tutorial/c-programming-interview-questions
+
+https://www.javatpoint.com/c-interview-questions
+
+https://sciencing.com/convert-between-base-number-systems-8442032.html
+
+https://prashantkadre.wordpress.com/2013/04/11/unix-boot-process/
+
+https://www.allaboutcircuits.com/projects/introduction-to-the-mqtt-protocol-on-nodemcu/#:~:text=MQ%20Telemetry%20Transport%20(MQTT)%20is,ESP8266%20running%20the%20NodeMCU%20firmware.
+
+https://www.scaler.com/topics/operating-system/deadlock-prevention-in-operating-system/
+
+https://www.iotality.com/armcm-access-levels/
+
+https://www.sciencedirect.com/topics/computer-science/single-instruction-single-data
+
+ https://www.engineersgarage.com/understanding-mqtt-protocol-iot-part-14/#:~:text=Message%20Queue%20Telemetry%20Transport%20(MQTT,usually%20implemented%20by%20the%20browser.
+
+ https://www.techtarget.com/iotagenda/definition/MQTT-MQ-Telemetry-Transport
+
+ https://www.hivemq.com/blog/15-frequently-asked-mqtt-questions/
+
+https://openlabpro.com/guide/mqtt-packet-format/#:~:text=%20MQTT%20Packet%20Format%20%201%20MQTT%20Packet,that%20topic%2C%20They%20will%20receive%20the...%20More%20?msclkid=b32f5279c6e311ec8d331c0d6c9342ab
+

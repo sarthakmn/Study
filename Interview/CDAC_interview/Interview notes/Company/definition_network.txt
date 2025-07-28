@@ -1,0 +1,30 @@
+
+
+1. correct your binary search tree code to sort element in it.
+2. Optimize your code for given linklist program: there is two linklist given both are merging at common node find that common node.
+3. Use cases of link lists why do we need them in programming
+4. Define Timecomplextiy of Datastructure.
+5. Give the time complexting of various sorting algorith.
+6. Use of various data strutures(stack,queue,linklist etc) in real case scenario
+7. Dynamic memory allocation vs static memory allocation
+8. Dynamic memory allocation for 1-D array vs 2D array.
+9. Static keyword for variable and functions.
+10. one question related to Precedence in expression evaluation.
+11. write algo fo how would you evaluate a expression like a+b*c-d/f 
+12. What is funtion pointers?? why do we need them?? give use cases.
+13. What is pointers?? why do we need them ?? apart from accessing value at mmeory level??
+14. what is OS? Gave the case study(Suppose I have Hardware and OS ?? what will be the OS role in that)
+15. What is ipc mechanism?? how it works??
+16  can we pass variable no. of arguments in C functions?? if yes how will perform operation on them??
+17. What is OS schdulers and the type of OS schdulers??
+18. Longest code you have written?? what probelms you have faced??
+19. What was your CDAC project?
+20. discuss the possible solutions for 'Longest repeating and non-overlapping substring in a given string' like https://www.geeksforgeeks.org/longest-repeating-and-non-overlapping-substring/
+
+
+
+
+1. What is deadlock?? reasons of it?? what are the solving Algorithems??
+2. What is static keyword for functions and variable??
+3. write code/algo how you will check the given expressions '{([])}[]'(balance) '{(})'(not balanced) has balance paranheses??
+4. Swapped the nibbles in a bytes??

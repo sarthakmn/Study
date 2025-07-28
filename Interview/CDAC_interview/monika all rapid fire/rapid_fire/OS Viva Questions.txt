@@ -1,0 +1,39 @@
+1. What is an operating system?
+2. What is a process?
+3. What are the different types of scheduling?
+4. What are the signals?
+5. What are the different IPC mechanisms?
+6. Are FIFO & Message queues same?
+7. What are the contents of Message queue header?
+8. Which IPC mechanism is fastest and why?
+9. What are the services of an operating system?
+10. What is monolothic and micro kernel?
+11. How fork is implemented?
+12. How will you generate SIGINT to a process?
+13. Which signal is generated when cntl+z is pressed?
+14. What will happern if the requested I/O cannot be allocated to aprocess?
+15. Difference between pipe & FIFO?
+16. What does V stands for In vfork()?
+17. How vfork() is different from fork()?
+18. What is the difference between Semaphore & a mutex?
+19. What are the different types of Semaphores?
+20. What are the different types of Mutexes?
+21. Can we create our system call in linux system? If yes, How?
+22. Which signal is passed to parent when child terminates?
+23. What are the total number of signals in linux?
+24. What is a PCB? What are the contents of PCB?
+25. What is the use of CURRENT Macro?
+26. What is copy on write?
+27. Explain the system Booting process?
+28. What is a shell? Name the different types of shell in linux.
+29. Difference between sigsuspend() & sigtimedwait() system call?
+30. Explain Race condition?
+31. Which one is faster, a Semaphore or a mutex and why?
+32. Which signals are generated on system shutdown?
+33. What are teh difference between a process and a thread?
+34. What is a dispatcher?
+35. Each process has its own stack.  True/ False. If true what is the significance of have one?
+36. What are the different states of a process?
+37. What is th edifference between a system application and a user application?
+38. What are the advantages and disadvantages of shared library over the static library?
+39. What re Reentrant functions?
