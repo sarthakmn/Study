@@ -1,0 +1,107 @@
+📘 DATA STRUCTURES FOR AUDIO/INFOTAINMENT INTERVIEWS
+🎯 Priority: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+====== MOST CRITICAL FOR AUDIO DOMAIN ======
+
+🔥 Circular/Ring Buffer ⭐⭐⭐ MOST IMPORTANT - MUST IMPLEMENT
+Used for: audio streaming, producer-consumer audio pipelines
+Must know: thread-safe implementation, lock-free variants
+Interview favorite: Implement from scratch with read/write pointers
+
+🔥 Queues ⭐⭐⭐ VERY IMPORTANT
+Used for: audio command queue, event queue, packet queue
+Types: FIFO queue, priority queue, thread-safe queue
+Audio use: buffering audio packets, scheduling audio tasks
+
+1. Arrays ⭐⭐⭐
+Searching (linear, binary)
+Sorting: bubble, insertion, selection (basic understanding)
+
+Used for: audio sample buffers, multi-channel audio data
+Bit manipulation: audio format flags, codec registers
+
+2. Linked Lists ⭐⭐⭐ IMPORTANT
+Very commonly asked:
+Audio use: buffer chains, plugin chain, audio node graphs
+Single linked list
+Double linked list
+Circular linked list
+Reverse a linked list
+Detect cycle (Floyd’s algorithm)
+Insert/delete at positions
+
+3. Stacks & Queues ⭐⭐⭐ VERY IMPORTANT
+Array & linked-list implementation
+Circular queue ⭐⭐⭐ (audio ring buffer)
+Priority queue ⭐⭐ (audio event scheduling)
+Thread-safe queue ⭐⭐⭐ (audio command queue)
+Lock-free queue ⭐⭐ (real-time audio)
+Applications: audio buffer management, effect stack
+Audio interviews often ask:
+Implement thread-safe circular buffer
+Producer-consumer audio pipeline
+
+4. Trees ⭐⭐
+(Basic knowledge is enough)
+Audio use: audio routing tree, effect chain hierarchy, device tree
+Binary tree
+Binary search tree
+Tree traversal: inorder, preorder, postorder
+Height/balance calculations
+Simple recursive problems
+
+5. Hashing ⭐⭐
+Hash table basics
+Collision handling: chaining, probing
+Audio use: device registry, codec lookup, config parameters
+
+6. Graphs ⭐ (Optional for audio)
+BFS, DFS
+Adjacency list/matrix
+Audio use: audio processing graph, routing graph
+Only basic understanding needed.
+
+7. Sorting & Searching ⭐⭐ (Depth Not Required)
+Quick sort ⭐
+Merge sort ⭐
+Binary search ⭐⭐ (device lookup, config search)
+Applications in audio: sorting audio devices, searching codecs
+
+📌 BONUS SECTION (VERY IMPORTANT FOR AUDIO INTERVIEWS)
+These are commonly asked practical topics in audio/infotainment interviews:
+
+✔ Writing embedded-quality C/C++ code ⭐⭐⭐
+Avoiding undefined behavior
+MISRA C rules (automotive)
+Use of volatile, const
+Thread-safe code
+Race conditions ⭐⭐⭐
+Deadlock prevention ⭐⭐⭐
+
+✔ Audio-specific design questions ⭐⭐⭐
+Circular/ring buffer implementation ⭐⭐⭐ (MUST PRACTICE)
+Thread-safe audio queue ⭐⭐⭐
+Audio mixer design ⭐⭐⭐
+Multi-threaded audio pipeline ⭐⭐⭐
+Audio device manager (Singleton pattern) ⭐⭐⭐
+State machine for audio playback ⭐⭐⭐
+Memory pool allocator for audio buffers ⭐⭐
+Audio routing system ⭐⭐
+Sample rate converter design ⭐⭐
+
+✔ Audio coding problems ⭐⭐⭐
+Implement circular buffer with read/write pointers
+Producer-consumer audio streaming
+Audio buffer overflow/underflow detection
+Multi-channel audio interleaving/de-interleaving
+Endian conversion for audio samples
+Audio sample format conversion (int16 ↔ float)
+Volume ramping/crossfade algorithm
+Audio latency calculation
+
+✔ System design questions ⭐⭐⭐
+Design a multi-zone audio system
+Design Bluetooth audio streaming system
+Design audio effects pipeline
+Design audio mixing console
+Audio synchronization across devices

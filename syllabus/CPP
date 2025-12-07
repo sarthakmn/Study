@@ -1,0 +1,195 @@
+✅ Complete C++ Syllabus for Audio/Infotainment Interviews
+🎯 PRIORITY LEGEND: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+====== MOST IMPORTANT C++ TOPICS FOR AUDIO/INFOTAINMENT ======
+
+🔥 MULTITHREADING & CONCURRENCY ⭐⭐⭐ MOST CRITICAL
+- std::thread ⭐⭐⭐ - Audio processing threads
+- std::mutex ⭐⭐⭐ - Protect shared audio buffers
+- std::lock_guard / std::unique_lock ⭐⭐⭐ - RAII mutex management
+- std::condition_variable ⭐⭐⭐ - Audio buffer ready notifications
+- std::atomic ⭐⭐⭐ - Lock-free audio state flags
+- Race conditions & deadlocks ⭐⭐⭐ - Common audio pipeline issues
+- Thread-safe queue ⭐⭐⭐ - Audio command queue
+
+🔥 SMART POINTERS & MEMORY MANAGEMENT ⭐⭐⭐
+- std::unique_ptr ⭐⭐⭐ - Audio resource ownership
+- std::shared_ptr ⭐⭐⭐ - Shared audio buffers
+- std::weak_ptr ⭐⭐ - Observer pattern for audio events
+- Custom deleters ⭐⭐⭐ - Cleanup audio device handles
+- Move semantics ⭐⭐⭐ - Efficient audio buffer passing
+- Memory pools ⭐⭐ - Deterministic audio allocation
+
+🔥 RAII (Resource Acquisition Is Initialization) ⭐⭐⭐
+- Automatic audio device/resource cleanup
+- Exception-safe audio pipeline
+- Lock guards, file handles
+
+🔥 DESIGN PATTERNS ⭐⭐⭐ VERY IMPORTANT
+- Observer Pattern ⭐⭐⭐ - Audio event notifications
+- Singleton Pattern ⭐⭐⭐ - Audio manager instance
+- Factory Pattern ⭐⭐⭐ - Audio codec/device creation
+- State Pattern ⭐⭐⭐ - Playback state machine
+- Strategy Pattern ⭐⭐ - Audio processing algorithms
+- Command Pattern ⭐⭐ - Audio command queue
+
+🔥 MODERN C++ FEATURES (C++11/14/17) ⭐⭐⭐
+- Lambda expressions ⭐⭐⭐ - Audio callbacks, async operations
+- auto keyword ⭐⭐⭐ - Type deduction
+- std::function & std::bind ⭐⭐⭐ - Flexible callbacks
+- Range-based for loops ⭐⭐
+- constexpr ⭐⭐ - Compile-time audio constants
+- std::optional ⭐⭐ - Optional audio parameters
+- std::variant ⭐⭐ - Type-safe audio event union
+
+🔥 LOW-LEVEL & EMBEDDED C++ ⭐⭐⭐
+- volatile keyword ⭐⭐⭐ - Audio hardware registers
+- Bit manipulation ⭐⭐⭐ - Codec register access
+- Placement new ⭐⭐ - In-place audio buffer construction
+- alignas/alignof ⭐⭐ - Audio buffer alignment for DMA
+- Inline functions ⭐⭐ - Performance-critical audio code
+
+🔥 STL CONTAINERS (Use Carefully) ⭐⭐
+- std::vector ⭐⭐ - Dynamic audio buffer lists (non-RT)
+- std::queue ⭐⭐ - Audio event/command queue
+- std::map / unordered_map ⭐⭐ - Device registry, config lookup
+- std::array ⭐⭐ - Fixed-size audio buffers
+
+🔥 TEMPLATES & GENERIC PROGRAMMING ⭐⭐
+- Function templates - Generic audio processing
+- Class templates - Audio buffer<T>
+- Template specialization - Optimized audio paths
+
+🔥 EXCEPTION HANDLING ⭐⭐
+- try/catch/throw (use cautiously in real-time code)
+- noexcept ⭐⭐ - Mark real-time functions
+- Exception safety guarantees
+
+====== C++ STANDARDS REFERENCE ======
+
+1. C++98 — ISO/IEC 14882:1998 ⭐
+First international C++ standard.
+Key features:
+Classes, objects, templates
+Exceptions
+Operator overloading
+Namespaces
+Standard Template Library (STL): vector, map, list, string, etc.
+iostreams
+Runtime type information (RTTI)
+
+2. C++03 — ISO/IEC 14882:2003
+Bug-fix revision of C++98.
+Key features:
+Fixes to template rules
+Improvements to the standard library
+No major new language features
+
+3. C++11 — ISO/IEC 14882:2011
+Massive modernization of C++.
+Often called C++0x or the “modern C++ revolution”.
+Key features:
+auto type deduction
+range-based for loops
+lambda expressions
+move semantics (&&, rvalue references)
+smart pointers (shared_ptr, unique_ptr)
+std::thread, mutexes, and futures
+constexpr
+nullptr, strong enums
+uniform initialization {}
+variadic templates
+
+New STL containers: unordered_map, array, forward_list
+4. C++14 — ISO/IEC 14882:2014
+Minor improvement of C++11.
+Key features:
+Generic lambdas
+Relaxed constexpr
+make_unique
+Binary literals (0b1010)
+Return type deduction
+
+5. C++17 — ISO/IEC 14882:2017
+Simplification & library expansion.
+Key features:
+std::optional, std::variant, std::any
+std::filesystem
+if/switch with initializer
+structured bindings (auto [x, y] = …)
+inline variables
+std::string_view
+Parallel algorithms
+Folding expressions for templates
+
+6. C++20 — ISO/IEC 14882:2020
+One of the biggest updates after C++11.
+Key features:
+Concepts
+Ranges library
+Coroutines (co_await, co_yield)
+Modules (import, export)
+Three-way comparison operator <=>
+Calendar & timezone library
+std::span
+constexpr improvements (even for std::vector in some implementations)
+
+7. C++23 — ISO/IEC 14882:2024
+Newest finalized standard (published 2024).
+Key features:
+std::expected
+std::print (finally!)
+Pattern matching (partial)
+Expanded ranges: views::join_with, zip, etc.
+constexpr for more library components
+Improved Unicode support
+std::mdspan
+Networking TS not included, postponed
+
+8. Design Patterns
+Singleton Pattern
+Ensures a class has only one instance and provides a global point of access. Useful for hardware resource management (e.g., a single UART driver).
+
+Factory Pattern
+Creates objects without specifying the exact class. Useful for abstracting hardware interfaces or device drivers.
+
+Observer Pattern
+Allows objects to be notified of state changes in other objects. Useful for event-driven systems (e.g., sensor updates).
+
+State Pattern ⭐⭐⭐
+Encapsulates state-specific behavior. Useful for implementing state machines common in embedded systems.
+Audio use: Playback states (Playing, Paused, Stopped, Buffering)
+
+Command Pattern ⭐⭐
+Encapsulates requests as objects. Useful for audio command queues.
+
+Strategy Pattern ⭐⭐
+Select algorithms at runtime. Useful for audio processing (EQ, effects)
+
+Adapter Pattern ⭐⭐
+Integrate different audio codec APIs with unified interface
+
+====== AUDIO-SPECIFIC C++ TOPICS ======
+
+🎵 Audio Buffer Management ⭐⭐⭐
+- Circular/ring buffer with thread-safe access
+- Zero-copy buffer passing
+- Buffer pooling for real-time performance
+
+🎵 Real-Time Considerations ⭐⭐⭐
+- Avoid dynamic allocation in audio callbacks
+- Lock-free programming (std::atomic)
+- Minimize lock contention
+- Priority inversion awareness
+
+🎵 Audio Pipeline Architecture ⭐⭐⭐
+- Producer-consumer pattern
+- Audio graph/node design
+- Stream mixing and routing
+
+🎵 Performance Optimization ⭐⭐
+- Inline critical audio functions
+- Cache-friendly data structures
+- SIMD/vectorization hints
+- Profiling audio latency
+

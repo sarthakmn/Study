@@ -1,0 +1,160 @@
+✅ C Language Syllabus for Audio/Infotainment Embedded Interviews
+🎯 PRIORITY LEGEND: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+1. C Fundamentals (Deep Understanding Required) ⭐⭐⭐
+✔ Syntax & Structure
+C program structure, header files
+Preprocessor directives (#include, #define, macros)
+Compilation & linking process
+Inline functions vs macros
+
+✔ Data Types
+Integer sizes, signedness
+char, ASCII, Unicode basics
+float, double, precision issues
+enum, typedef, struct, union
+
+✔ Operators
+Bitwise operators (very important)
+Shift operators — logical vs arithmetic
+Pre/post increment behavior
+Boolean operators & short-circuiting
+
+2. Deep Dive Into Pointers ⭐⭐⭐ MOST CRITICAL
+Audio/Infotainment interviews focus HEAVILY on this.
+Used for: audio buffer management, callback functions, codec APIs
+
+✔ Pointer Basics
+Basics: pointer to int/char/float
+Void pointer
+Dangling pointer
+Wild pointer
+NULL pointer
+
+✔ Pointer Arithmetic
+Pointer addition/subtraction
+Difference between ptr++ and ++ptr
+*(p+1) vs p[1]
+
+✔ Multi-level & Special Pointers
+Pointer to pointer
+Double/triple pointers
+Pointer to array vs array of pointers
+Function pointers
+Callback functions
+
+3. Arrays & Strings
+✔ Arrays
+Static & dynamic arrays
+Multi-dimensional arrays
+Array decay to pointer
+
+✔ Strings
+strlen, strcpy, strncpy, strcmp, etc.
+Character arrays vs pointers to char
+Common pitfalls: buffer overflow, off-by-one errors
+
+4. Structures, Unions & Memory Layout
+✔ Structures
+Padding and alignment (very important)
+Packing (#pragma pack)
+Nested structures
+Passing structures to functions
+Structure vs typedef struct
+
+✔ Unions
+Memory sharing
+Use cases in embedded
+Difference between struct & union layout
+
+✔ Bitfields
+Using bitfields to access hardware registers
+Endianness concerns
+
+5. Functions & Advanced Concepts
+✔ Function basics
+Call by value vs call by reference
+Inline vs normal functions
+
+✔ Advanced
+Recursion
+Function pointers
+Re-entrant functions
+Static functions (internal linkage)
+Storage classes (static, auto, extern, register)
+
+6. Memory Management
+Critical for semiconductor interviews.
+✔ Stack vs Heap
+✔ malloc/calloc/realloc/free
+✔ Memory leaks & fragmentation
+✔ Segmentation faults
+✔ Memory alignment
+✔ Cache behavior
+Cache-friendly coding
+Locality of reference
+
+7. Preprocessor & Build Process
+✔ Preprocessor
+Macros with arguments
+Multi-line macros
+Conditional compilation (#if, #ifdef)
+Include guards
+
+✔ Compilation
+Preprocessing → Compilation → Assembly → Linking
+Object files, symbol tables
+Static vs dynamic linking
+Cross-compilation basics for embedded
+
+8. Bit Manipulation ⭐⭐⭐ EXTREMELY IMPORTANT
+Used for: audio codec registers, DSP control, I2C/SPI communication, audio format flags.
+✔ Bit operations
+Set/clear/toggle/test a bit
+Create bit masks
+Extract high/low nibbles
+Extract fields from registers
+Rotate left/right
+
+9. Embedded System–Specific C Concepts ⭐⭐⭐ CRITICAL FOR AUDIO
+✔ Volatile keyword ⭐⭐⭐
+Why needed for hardware registers (audio codec registers)
+Why needed for ISRs (audio DMA interrupts)
+Compiler optimization issues
+
+✔ const vs volatile ⭐⭐⭐
+✔ Memory-mapped I/O ⭐⭐⭐ (audio device registers)
+✔ Endianness: big vs little ⭐⭐⭐ (audio data format conversion)
+✔ Interrupt service routines (ISR) basics ⭐⭐⭐ (audio DMA callbacks)
+✔ Bare-metal vs RTOS differences ⭐⭐
+✔ DMA (Direct Memory Access) ⭐⭐⭐ (zero-copy audio buffer transfer)
+✔ Cache coherency ⭐⭐ (audio buffer consistency)
+
+10. Coding Problems (Must-Practice Topics)
+
+✔ String problems
+Reverse string
+Remove duplicates
+Implement strstr
+Palindrome checks
+
+✔ Pointer problems
+Swap using pointers
+Matrix operations
+Array of pointers
+
+✔ Bit manipulation problems
+Count set bits
+Reverse bits
+Detect power of 2
+Find missing/duplicate number
+
+✔ Memory simulation
+Implement malloc/free (simple model)
+
+✔ Audio-specific problems ⭐⭐⭐
+Circular/ring buffer implementation (MUST KNOW)
+Audio buffer queue management
+Sample format conversion (int16 to float)
+Endian conversion for audio data
+Multi-channel audio interleaving/de-interleaving

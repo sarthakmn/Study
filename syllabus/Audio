@@ -1,0 +1,627 @@
+🎵 AUDIO SYSTEM ENGINEERING - COMPREHENSIVE SYLLABUS
+For Qualcomm, NXP, Harman Infotainment Interviews
+
+🎯 PRIORITY LEGEND: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+===============================================================================
+SECTION 1: AUDIO FUNDAMENTALS ⭐⭐⭐
+===============================================================================
+
+1.1 Digital Audio Basics ⭐⭐⭐
+✔ Sample Rate (8kHz, 16kHz, 44.1kHz, 48kHz, 96kHz, 192kHz)
+✔ Bit Depth (8-bit, 16-bit, 24-bit, 32-bit)
+✔ Channels (Mono, Stereo, 5.1, 7.1, Dolby Atmos)
+✔ Audio Formats: PCM, WAV, FLAC, MP3, AAC, Opus, Vorbis
+✔ Nyquist Theorem & Aliasing
+✔ Quantization & Dithering
+✔ Interleaved vs Non-interleaved audio
+
+1.2 Audio Processing Concepts ⭐⭐⭐
+✔ Sample Rate Conversion (SRC) / Resampling
+✔ Audio Mixing & Routing
+✔ Volume Control & Gain
+✔ Equalization (EQ) - Parametric, Graphic
+✔ Dynamic Range Compression
+✔ Audio Effects: Reverb, Delay, Chorus
+✔ Crossfade & Ramping
+✔ Latency & Jitter
+✔ Audio Synchronization (A/V sync)
+
+1.3 Audio Buffer Management ⭐⭐⭐ MOST CRITICAL
+✔ Circular/Ring Buffer ⭐⭐⭐ (MUST IMPLEMENT FROM SCRATCH)
+✔ Double Buffering / Triple Buffering
+✔ Buffer Size vs Latency Trade-off
+✔ Buffer Overflow / Underflow (Xruns)
+✔ Zero-Copy Buffer Transfer
+✔ DMA (Direct Memory Access) Buffers
+✔ Producer-Consumer Pattern
+✔ Lock-Free Audio Buffers
+
+1.4 Audio Hardware Interfaces ⭐⭐⭐
+✔ I2S (Inter-IC Sound) ⭐⭐⭐
+  - Master/Slave mode
+  - BCLK, LRCK, SDATA signals
+  - Left/Right channel alignment
+✔ TDM (Time Division Multiplexing) ⭐⭐
+✔ PDM (Pulse Density Modulation) ⭐
+✔ S/PDIF (Sony/Philips Digital Interface) ⭐
+✔ HDMI Audio ⭐⭐
+✔ USB Audio ⭐⭐
+✔ Analog Audio (ADC/DAC) ⭐⭐
+
+===============================================================================
+SECTION 2: LINUX AUDIO STACK ⭐⭐⭐
+===============================================================================
+
+2.1 ALSA (Advanced Linux Sound Architecture) ⭐⭐⭐ MUST KNOW
+✔ ALSA Architecture Overview
+✔ PCM Interface (snd_pcm_*)
+  - snd_pcm_open()
+  - snd_pcm_hw_params_*()
+  - snd_pcm_sw_params_*()
+  - snd_pcm_prepare()
+  - snd_pcm_writei() / snd_pcm_readi()
+  - snd_pcm_drain(), snd_pcm_drop()
+✔ Audio Device Enumeration
+✔ Hardware Parameters
+  - Access type (RW_INTERLEAVED, RW_NONINTERLEAVED, MMAP)
+  - Format (S16_LE, S32_LE, FLOAT_LE)
+  - Channels, Rate
+  - Period size, Buffer size
+✔ Software Parameters
+  - Start threshold
+  - Stop threshold
+  - Avail min
+✔ Periods & Frames
+  - Period = chunk of frames
+  - Frame = samples for all channels at one time point
+✔ ALSA Plugins & Virtual Devices
+  - dmix (software mixing)
+  - dsnoop (capture sharing)
+  - plug (format conversion)
+  - rate (sample rate conversion)
+✔ ALSA Control Interface (mixer controls)
+✔ Asynchronous Audio Callbacks
+✔ Memory-mapped I/O (MMAP mode)
+✔ Debugging ALSA
+  - aplay, arecord, amixer, alsactl
+  - /proc/asound/
+
+2.2 PulseAudio ⭐⭐⭐ IMPORTANT FOR DESKTOP/INFOTAINMENT
+✔ PulseAudio Architecture
+  - PulseAudio server/daemon
+  - Client API (libpulse)
+✔ Streams, Sinks, Sources
+✔ Audio Routing & Policy
+✔ Per-application volume control
+✔ Network audio streaming
+✔ Module system
+✔ PulseAudio configuration (daemon.conf, client.conf)
+✔ PulseAudio commands: pactl, pacmd, pavucontrol
+✔ Integration with ALSA
+
+2.3 PipeWire ⭐⭐ MODERN UNIFIED FRAMEWORK
+✔ PipeWire Architecture
+✔ Unified audio/video handling
+✔ Low-latency design
+✔ ALSA, PulseAudio, JACK compatibility
+✔ Session management
+
+2.4 JACK Audio Connection Kit ⭐⭐
+✔ Low-latency professional audio
+✔ Real-time audio graph
+✔ Jack client API
+✔ Connection management
+
+2.5 Audio Codecs & Hardware Drivers ⭐⭐⭐
+✔ Audio Codec Chips (WM8960, TLV320AIC, CS42L52, etc.)
+✔ Codec Driver Architecture
+✔ I2C/SPI Control Interface
+✔ Codec Register Programming
+✔ DAPM (Dynamic Audio Power Management)
+✔ Kcontrols (ALSA mixer controls)
+✔ ASoC (ALSA System on Chip) Framework ⭐⭐⭐
+  - Machine driver
+  - Platform driver (CPU DAI)
+  - Codec driver
+  - DAI (Digital Audio Interface) links
+
+2.6 Linux Audio Programming ⭐⭐⭐
+✔ Opening and configuring PCM devices
+✔ Blocking vs Non-blocking I/O
+✔ select(), poll(), epoll() for audio events
+✔ Real-time thread scheduling (SCHED_FIFO)
+✔ Thread priorities for audio threads
+✔ Memory locking (mlockall) for real-time
+✔ CPU affinity for audio threads
+✔ Handling Xruns (overrun/underrun)
+✔ Audio latency measurement
+✔ Jitter analysis
+
+===============================================================================
+SECTION 3: ANDROID AUDIO STACK ⭐⭐⭐
+===============================================================================
+
+3.1 Android Audio Architecture Overview ⭐⭐⭐
+✔ Application Layer (MediaPlayer, AudioTrack, AudioRecord)
+✔ Framework Layer (AudioManager, AudioService)
+✔ Native Layer (AudioFlinger, AudioPolicyService)
+✔ HAL Layer (Audio HAL)
+✔ Kernel Layer (ALSA drivers)
+
+3.2 AudioFlinger ⭐⭐⭐ CRITICAL
+✔ AudioFlinger Architecture
+✔ Audio Tracks & Mixing
+✔ PlaybackThread, RecordThread
+✔ MixerThread vs DirectOutputThread vs OffloadThread
+✔ Audio Resampling in AudioFlinger
+✔ Fast Mixer (low-latency path)
+✔ Audio Effects Framework
+✔ Binder IPC with AudioFlinger
+
+3.3 Audio HAL (Hardware Abstraction Layer) ⭐⭐⭐ MUST KNOW
+✔ audio_hw.h interface
+✔ audio_hw_device operations
+  - open_output_stream()
+  - open_input_stream()
+  - set_parameters()
+  - get_parameters()
+✔ audio_stream_out operations
+  - write()
+  - get_latency()
+  - set_volume()
+  - standby()
+✔ audio_stream_in operations
+  - read()
+  - standby()
+✔ Audio routing in HAL
+✔ Device enumeration
+✔ Audio configuration (audio_policy_configuration.xml)
+
+3.4 HIDL / AIDL Audio HAL ⭐⭐⭐
+✔ HIDL (Hardware Interface Definition Language) - Android 8-12
+✔ AIDL (Android Interface Definition Language) - Android 13+
+✔ IDevice, IStream interfaces
+✔ Audio HAL versions (2.0, 4.0, 6.0, 7.0, 7.1)
+✔ Binder communication
+✔ Death notifications & HAL recovery
+
+3.5 Audio Policy Manager ⭐⭐⭐
+✔ Audio Policy Service
+✔ Routing decisions
+✔ Device selection
+✔ Volume management
+✔ Audio focus management
+✔ Audio modes (MODE_NORMAL, MODE_IN_CALL, MODE_IN_COMMUNICATION)
+✔ audio_policy_configuration.xml
+✔ Audio streams (MUSIC, VOICE_CALL, RING, ALARM, etc.)
+
+3.6 Android Audio Programming ⭐⭐⭐
+✔ AudioTrack API
+  - MODE_STREAM vs MODE_STATIC
+  - write() callback
+  - Low-latency audio
+✔ AudioRecord API
+✔ MediaPlayer / MediaCodec
+✔ OpenSL ES (native audio API)
+✔ AAudio (low-latency native API) ⭐⭐⭐
+✔ Oboe library (Google's C++ audio library)
+✔ Audio Effects API
+
+3.7 Android Audio Features ⭐⭐
+✔ Fast Audio Path (low-latency)
+✔ Audio Offload
+✔ A2DP (Bluetooth audio)
+✔ USB Audio
+✔ Audio Tunneling
+✔ Spatial Audio / 3D Audio
+✔ Audio Haptics
+
+===============================================================================
+SECTION 4: BLUETOOTH AUDIO ⭐⭐⭐
+===============================================================================
+
+4.1 Bluetooth Audio Profiles ⭐⭐⭐
+✔ A2DP (Advanced Audio Distribution Profile) ⭐⭐⭐
+  - Source vs Sink
+  - SBC, AAC, aptX, aptX HD, LDAC codecs
+  - Codec negotiation
+✔ HFP (Hands-Free Profile) ⭐⭐⭐
+  - Voice call audio
+  - SCO/eSCO audio
+✔ AVRCP (Audio/Video Remote Control Profile) ⭐⭐
+✔ HID (Human Interface Device) - for remote controls
+✔ BLE Audio ⭐⭐ (Bluetooth 5.2+)
+  - LC3 codec
+  - Auracast
+  - Multi-stream audio
+
+4.2 BlueZ Stack (Linux Bluetooth) ⭐⭐
+✔ BlueZ architecture
+✔ bluetoothctl, hciconfig, hcitool
+✔ D-Bus interface
+✔ PulseAudio Bluetooth modules
+✔ A2DP source/sink setup
+
+4.3 Bluetooth Audio Implementation ⭐⭐⭐
+✔ Pairing & Connection management
+✔ Audio streaming setup
+✔ Codec selection & configuration
+✔ Latency issues & solutions
+✔ Audio synchronization
+✔ Reconnection handling
+
+===============================================================================
+SECTION 5: AUTOMOTIVE / INFOTAINMENT SPECIFIC ⭐⭐⭐
+===============================================================================
+
+5.1 Automotive Audio Systems ⭐⭐⭐
+✔ Multi-zone audio ⭐⭐⭐
+  - Driver, passenger, rear zones
+  - Independent volume & source control
+✔ Audio sources
+  - Radio (AM/FM/DAB)
+  - Bluetooth streaming
+  - USB media
+  - Auxiliary input
+  - Embedded media player
+  - Navigation prompts
+  - Phone calls
+✔ Audio mixing & ducking ⭐⭐⭐
+  - Priority-based mixing
+  - Navigation interrupts music
+  - Phone call takes precedence
+✔ Audio routing matrix ⭐⭐⭐
+✔ Amplifier control
+✔ Speaker configuration (4-way, 6-way, etc.)
+
+5.2 Automotive Communication Protocols ⭐⭐⭐
+✔ CAN Bus ⭐⭐⭐ VERY IMPORTANT
+  - CAN 2.0, CAN FD
+  - Audio control messages
+  - Volume control via CAN
+  - Source selection via CAN
+✔ LIN (Local Interconnect Network) ⭐
+✔ MOST (Media Oriented Systems Transport) ⭐
+  - Optical audio network
+  - Ring topology
+✔ Ethernet AVB/TSN ⭐⭐
+  - Audio Video Bridging
+  - Time-Sensitive Networking
+  - Low-latency audio over Ethernet
+✔ AUTOSAR ⭐⭐
+  - Automotive software architecture
+  - Basic Software (BSW)
+  - Application Layer
+
+5.3 Audio DSP & Processing ⭐⭐
+✔ Digital Signal Processor integration
+✔ Audio effects (reverb, EQ, surround)
+✔ Active Noise Cancellation (ANC)
+✔ Echo cancellation
+✔ Beamforming for microphones
+✔ Voice recognition preprocessing
+
+5.4 Vehicle Specific Features ⭐⭐
+✔ Speed-dependent volume
+✔ Parking assistance audio
+✔ Chime/warning sounds
+✔ Turn-by-turn navigation audio
+✔ Voice assistant integration
+
+===============================================================================
+SECTION 6: REAL-TIME AUDIO PROGRAMMING ⭐⭐⭐
+===============================================================================
+
+6.1 Real-Time Constraints ⭐⭐⭐
+✔ Deterministic behavior
+✔ Bounded latency
+✔ No dynamic memory allocation in RT path
+✔ No blocking operations in RT callbacks
+✔ No system calls in RT path
+✔ No mutex locks (use lock-free structures)
+
+6.2 Lock-Free Programming ⭐⭐⭐
+✔ Lock-free circular buffer / ring buffer ⭐⭐⭐
+✔ std::atomic operations
+✔ Memory ordering (acquire, release, relaxed)
+✔ Compare-and-swap (CAS)
+✔ ABA problem
+
+6.3 Thread Priorities & Scheduling ⭐⭐⭐
+✔ SCHED_FIFO, SCHED_RR ⭐⭐⭐
+✔ Thread priority inversion ⭐⭐⭐
+✔ Priority inheritance
+✔ CPU affinity (isolcpus)
+✔ RT throttling
+
+6.4 Latency Optimization ⭐⭐⭐
+✔ Measuring audio latency
+✔ Reducing buffer sizes
+✔ PREEMPT_RT kernel patch
+✔ IRQ threading
+✔ Cyclictest for latency testing
+✔ Cache optimization
+✔ SIMD optimization (NEON, SSE)
+
+===============================================================================
+SECTION 7: AUDIO CODING & COMPRESSION ⭐⭐
+===============================================================================
+
+7.1 Audio Codecs Overview ⭐⭐
+✔ Lossless Codecs
+  - PCM (uncompressed)
+  - FLAC
+  - ALAC (Apple Lossless)
+  - WAV
+✔ Lossy Codecs
+  - MP3 (MPEG-1/2 Layer 3)
+  - AAC (Advanced Audio Coding)
+  - Opus (for VoIP)
+  - Vorbis
+  - WMA
+✔ Speech Codecs
+  - G.711 (μ-law, A-law)
+  - G.722
+  - AMR (Adaptive Multi-Rate)
+  - Opus (low latency)
+
+7.2 Codec Integration ⭐⭐⭐
+✔ FFmpeg / libav
+✔ Codec initialization
+✔ Encoding / Decoding API
+✔ Buffer management
+✔ Error handling
+
+===============================================================================
+SECTION 8: AUDIO HARDWARE CONTROL ⭐⭐⭐
+===============================================================================
+
+8.1 I2C/SPI Audio Codec Control ⭐⭐⭐
+✔ I2C protocol basics
+✔ Reading/writing codec registers
+✔ Register maps
+✔ Codec initialization sequence
+✔ Volume control registers
+✔ Mute/unmute control
+✔ Power management
+
+8.2 GPIO Control ⭐⭐
+✔ Amplifier enable/disable
+✔ Codec reset
+✔ Mute control
+
+8.3 DMA (Direct Memory Access) ⭐⭐⭐
+✔ DMA controller configuration
+✔ Circular DMA for audio
+✔ DMA interrupts
+✔ Half-transfer and full-transfer callbacks
+✔ Cache coherency with DMA buffers
+
+===============================================================================
+SECTION 9: DEBUGGING & TESTING ⭐⭐⭐
+===============================================================================
+
+9.1 Audio Debugging Tools ⭐⭐⭐
+✔ aplay, arecord (ALSA playback/capture)
+✔ amixer, alsactl (ALSA mixer control)
+✔ speaker-test (test audio channels)
+✔ pactl, pacmd (PulseAudio control)
+✔ audacity (audio analysis)
+✔ sox (audio file manipulation)
+✔ ffmpeg (format conversion)
+✔ GDB (debugging audio crashes)
+✔ valgrind (memory leaks in audio code)
+✔ strace (system call tracing)
+✔ perf (performance profiling)
+
+9.2 Audio Analysis ⭐⭐
+✔ Spectrum analyzer
+✔ Oscilloscope
+✔ THD (Total Harmonic Distortion) measurement
+✔ SNR (Signal-to-Noise Ratio)
+✔ Latency measurement
+✔ Jitter analysis
+
+9.3 Common Audio Issues & Solutions ⭐⭐⭐
+✔ Crackling / Popping
+  - Buffer size too small
+  - CPU overload
+  - Priority issues
+✔ Buffer overrun / underrun (Xruns)
+  - Increase buffer size
+  - Fix scheduling issues
+✔ No audio output
+  - Check ALSA device
+  - Check volume/mute
+  - Check routing
+✔ High latency
+  - Reduce buffer size
+  - Use real-time scheduling
+✔ Audio sync issues
+  - Timestamp management
+  - Clock synchronization
+
+===============================================================================
+SECTION 10: INTERVIEW CODING PROBLEMS ⭐⭐⭐
+===============================================================================
+
+10.1 Must-Practice Audio Coding Problems ⭐⭐⭐
+
+1. ⭐⭐⭐ CIRCULAR/RING BUFFER (MOST ASKED)
+   Implement thread-safe circular buffer from scratch
+   - Single producer, single consumer
+   - Multiple producers, multiple consumers
+   - Lock-free version using atomics
+
+2. ⭐⭐⭐ AUDIO MIXER
+   Implement audio sample mixer
+   - Mix two audio streams
+   - Handle different sample rates
+   - Volume control per stream
+
+3. ⭐⭐⭐ PRODUCER-CONSUMER AUDIO PIPELINE
+   Multi-threaded audio streaming
+   - Producer fills buffer
+   - Consumer reads and plays
+   - Handle synchronization
+
+4. ⭐⭐⭐ AUDIO BUFFER OVERFLOW/UNDERFLOW DETECTION
+   Detect and handle xruns
+
+5. ⭐⭐⭐ SAMPLE RATE CONVERSION
+   Convert audio from one sample rate to another
+   - Simple interpolation
+   - Linear interpolation
+
+6. ⭐⭐⭐ AUDIO FORMAT CONVERSION
+   - int16 to float32
+   - Stereo to mono
+   - Mono to stereo
+   - Endian conversion
+
+7. ⭐⭐⭐ MULTI-CHANNEL AUDIO INTERLEAVING
+   - Interleave separate L/R channels
+   - De-interleave stereo to L/R
+
+8. ⭐⭐ VOLUME CONTROL WITH RAMPING
+   Smooth volume changes to avoid clicks
+
+9. ⭐⭐ CROSSFADE BETWEEN TWO AUDIO STREAMS
+   Smooth transition between sources
+
+10. ⭐⭐ AUDIO LATENCY CALCULATOR
+    Calculate end-to-end audio latency
+
+10.2 System Design Questions ⭐⭐⭐
+
+1. ⭐⭐⭐ Design a multi-zone audio system for a car
+2. ⭐⭐⭐ Design audio routing system with priority
+3. ⭐⭐⭐ Design Bluetooth A2DP audio streaming
+4. ⭐⭐ Design audio effects pipeline
+5. ⭐⭐ Design low-latency audio capture system
+6. ⭐⭐ Design audio mixing console
+7. ⭐⭐ Design audio device manager (Singleton pattern)
+
+===============================================================================
+SECTION 11: PERFORMANCE & OPTIMIZATION ⭐⭐
+===============================================================================
+
+11.1 Audio Performance Optimization ⭐⭐
+✔ Minimize memory allocations
+✔ Use memory pools for buffers
+✔ Cache-friendly data structures
+✔ SIMD optimization (NEON on ARM, SSE on x86)
+✔ Avoid unnecessary copying
+✔ Zero-copy buffer sharing
+✔ Inline critical functions
+✔ Profile with perf, gprof
+✔ Reduce context switches
+
+11.2 Power Optimization ⭐⭐
+✔ Dynamic Audio Power Management (DAPM)
+✔ Codec power-down modes
+✔ CPU frequency scaling
+✔ DMA vs CPU-based transfer
+
+===============================================================================
+SECTION 12: COMPANY-SPECIFIC PREPARATION
+===============================================================================
+
+🎯 QUALCOMM FOCUS
+- Android AudioFlinger internals ⭐⭐⭐
+- Audio HAL implementation ⭐⭐⭐
+- Snapdragon audio subsystem
+- HIDL/AIDL interfaces ⭐⭐⭐
+- Bluetooth audio (A2DP) ⭐⭐⭐
+- Multi-threading & synchronization ⭐⭐⭐
+- C++ design patterns ⭐⭐⭐
+
+🎯 NXP FOCUS
+- Embedded C programming ⭐⭐⭐
+- I2C/SPI codec control ⭐⭐⭐
+- ALSA driver development ⭐⭐⭐
+- ASoC framework ⭐⭐⭐
+- FreeRTOS audio tasks ⭐⭐
+- DMA configuration ⭐⭐⭐
+- CAN bus communication ⭐⭐⭐
+- AUTOSAR basics ⭐⭐
+
+🎯 HARMAN FOCUS
+- Linux audio stack (ALSA, PulseAudio) ⭐⭐⭐
+- Multi-zone audio systems ⭐⭐⭐
+- Audio routing & mixing ⭐⭐⭐
+- Real-time audio processing ⭐⭐⭐
+- Automotive protocols (CAN, MOST) ⭐⭐⭐
+- Audio DSP integration ⭐⭐
+- System design questions ⭐⭐⭐
+- C++ audio frameworks ⭐⭐⭐
+
+===============================================================================
+SECTION 13: RECOMMENDED LEARNING PATH (8 WEEKS)
+===============================================================================
+
+WEEK 1-2: AUDIO FUNDAMENTALS & BUFFER MANAGEMENT
+- Digital audio basics
+- Implement circular buffer (thread-safe check this current files and sort the syllabus & lock-free)
+- Audio formats and conversions
+- Practice: Audio mixer, format converter
+
+WEEK 3-4: LINUX AUDIO (ALSA)
+- ALSA PCM API programming
+- Write ALSA playback/capture programs
+- Understand periods, frames, buffers
+- Practice: Simple audio player using ALSA
+
+WEEK 5: ANDROID AUDIO STACK
+- AudioFlinger architecture study
+- Audio HAL interface
+- HIDL/AIDL concepts
+- Practice: Analyze Android audio source code
+
+WEEK 6: MULTITHREADING & REAL-TIME AUDIO
+- C++ multithreading (mutex, condition variables)
+- Lock-free programming
+- Real-time scheduling
+- Practice: Multi-threaded audio pipeline
+
+WEEK 7: AUTOMOTIVE & BLUETOOTH AUDIO
+- CAN bus basics
+- Bluetooth A2DP profile
+- Multi-zone audio design
+- Practice: Audio routing system design
+
+WEEK 8: SYSTEM DESIGN & MOCK INTERVIEWS
+- Review all audio concepts
+- Practice system design questions
+- Mock coding interviews
+- Review your past audio projects
+
+===============================================================================
+QUICK REFERENCE: TOP 20 MUST-KNOW CONCEPTS
+===============================================================================
+
+1. ⭐⭐⭐ Circular/Ring Buffer Implementation (thread-safe)
+2. ⭐⭐⭐ ALSA PCM API (open, configure, write/read)
+3. ⭐⭐⭐ Audio buffer management (overflow/underflow)
+4. ⭐⭐⭐ Multi-threading & synchronization (mutex, condition variables)
+5. ⭐⭐⭐ Android AudioFlinger architecture
+6. ⭐⭐⭐ Audio HAL interface (HIDL/AIDL)
+7. ⭐⭐⭐ Real-time scheduling (SCHED_FIFO)
+8. ⭐⭐⭐ Lock-free programming (atomics)
+9. ⭐⭐⭐ I2S audio interface
+10. ⭐⭐⭐ I2C codec control
+11. ⭐⭐⭐ Sample rate & format conversion
+12. ⭐⭐⭐ Audio mixing algorithm
+13. ⭐⭐⭐ DMA for audio buffers
+14. ⭐⭐⭐ Bluetooth A2DP profile
+15. ⭐⭐⭐ CAN bus communication
+16. ⭐⭐⭐ Multi-zone audio routing
+17. ⭐⭐⭐ Audio latency calculation & optimization
+18. ⭐⭐⭐ Producer-consumer pattern
+19. ⭐⭐⭐ C++ design patterns (Singleton, Observer, Factory)
+20. ⭐⭐⭐ Audio system design questions
+
+===============================================================================
+END OF AUDIO SYLLABUS
+===============================================================================

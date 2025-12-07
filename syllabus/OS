@@ -1,0 +1,160 @@
+🎯 LINUX OS SYLLABUS FOR AUDIO/INFOTAINMENT INTERVIEWS
+Priority: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+====== MOST CRITICAL FOR AUDIO DOMAIN ======
+
+Synchronization & Concurrency ⭐⭐⭐ MOST IMPORTANT
+Mutex, Semaphores, Spinlocks ⭐⭐⭐
+Deadlock prevention and detection ⭐⭐⭐
+Race conditions ⭐⭐⭐ (audio buffer corruption)
+Atomic operations ⭐⭐⭐
+Critical sections ⭐⭐⭐
+Condition variables ⭐⭐⭐ (buffer ready signaling)
+
+Inter-Process Communication (IPC) ⭐⭐⭐ CRITICAL
+Shared memory ⭐⭐⭐ (zero-copy audio buffers between processes)
+Message queues ⭐⭐⭐ (audio commands)
+Pipes ⭐⭐ (audio streaming)
+Sockets ⭐⭐ (network audio)
+Semaphores ⭐⭐⭐ (synchronization)
+
+Real-Time Concepts ⭐⭐⭐ VERY IMPORTANT
+Real-time scheduling policies ⭐⭐⭐ (SCHED_FIFO, SCHED_RR)
+Priority inversion and solutions ⭐⭐⭐
+Latency and jitter ⭐⭐⭐ (audio glitches)
+RT-Linux/PREEMPT_RT patch ⭐⭐
+Thread priority management ⭐⭐⭐
+
+Memory Management ⭐⭐⭐
+Memory mapping (mmap) ⭐⭐⭐ (DMA buffers, shared audio memory)
+Memory allocation (malloc, free) ⭐⭐⭐
+Stack vs Heap ⭐⭐⭐
+Memory leaks and debugging tools (valgrind) ⭐⭐⭐
+DMA (Direct Memory Access) ⭐⭐⭐ (audio hardware buffers)
+Cache coherency ⭐⭐ (DMA buffer consistency)
+
+File Systems & Device Access ⭐⭐⭐
+File descriptors ⭐⭐⭐
+System calls (open, read, write, close, ioctl) ⭐⭐⭐
+Device files (/dev/snd/*) ⭐⭐⭐
+Proc filesystem (/proc, /sys) ⭐⭐
+Non-blocking I/O ⭐⭐⭐
+poll/epoll/select ⭐⭐ (audio event handling)
+
+====== IMPORTANT TOPICS ======
+
+Process Management ⭐⭐
+Process creation (fork, exec, clone) ⭐⭐
+Process states and scheduling
+Context switching
+Inter-Process Communication (IPC): pipes, message queues, shared memory, semaphores
+Threads (POSIX threads) and synchronization primitives
+
+Memory Management
+Virtual memory and paging
+Memory mapping (mmap)
+Memory allocation (malloc, free)
+Stack vs Heap
+Memory leaks and debugging tools (valgrind)
+DMA (Direct Memory Access)
+
+File Systems
+File descriptors
+System calls (open, read, write, close, ioctl)
+File permissions and ownership
+Virtual File System (VFS)
+Device files (/dev)
+Proc filesystem (/proc, /sys)
+
+Device Drivers
+Character devices vs Block devices
+Device driver architecture
+Kernel modules (insmod, rmmod, lsmod)
+Device Tree (for embedded systems)
+Platform drivers
+
+Real-Time Concepts
+Real-time scheduling policies (SCHED_FIFO, SCHED_RR)
+Priority inversion and solutions
+Latency and jitter
+RT-Linux/PREEMPT_RT patch
+
+Synchronization & Concurrency
+Mutex, Semaphores, Spinlocks
+Deadlock prevention and detection
+Race conditions
+Atomic operations
+Critical sections
+
+System Calls & Kernel Space
+System call interface
+User space vs Kernel space
+Context switching overhead
+Trap/exception handling
+
+Networking (for connected embedded systems)
+Socket programming
+TCP/IP stack basics
+Network protocols (MQTT, CoAP for IoT)
+
+Boot Process
+Bootloader (U-Boot, GRUB)
+Kernel initialization
+Init systems (systemd, init)
+Device initialization
+
+Debugging & Tools
+GDB (GNU Debugger)
+Strace, ltrace
+dmesg and kernel logs
+perf and profiling tools
+Core dumps
+
+Build Systems ⭐⭐
+Makefiles ⭐⭐
+Cross-compilation ⭐⭐ (ARM targets for Qualcomm/NXP)
+Toolchains (gcc, binutils) ⭐⭐
+Yocto/Buildroot (for embedded Linux) ⭐
+CMake ⭐⭐
+
+====== AUDIO-SPECIFIC LINUX TOPICS ======
+
+🎵 ALSA (Advanced Linux Sound Architecture) ⭐⭐⭐ MUST KNOW
+- PCM interface (snd_pcm_*)
+- Audio device enumeration and configuration
+- Buffer management (periods, frames)
+- Asynchronous audio callbacks
+- ALSA plugins and dmix
+
+🎵 Audio Frameworks ⭐⭐⭐
+- PulseAudio ⭐⭐⭐ (desktop/infotainment)
+- JACK ⭐⭐ (low-latency professional audio)
+- PipeWire ⭐⭐ (modern unified audio/video)
+- AudioFlinger ⭐⭐⭐ (Android audio server)
+
+🎵 Audio Hardware Interfaces ⭐⭐⭐
+- I2S (Inter-IC Sound) ⭐⭐⭐
+- TDM (Time Division Multiplexing) ⭐⭐
+- I2C (codec control) ⭐⭐⭐
+- SPI (audio peripherals) ⭐⭐
+- UART (Bluetooth audio) ⭐⭐
+
+🎵 Automotive/Infotainment Specific ⭐⭐⭐
+- CAN bus ⭐⭐⭐ (vehicle network)
+- AUTOSAR ⭐⭐ (automotive standard)
+- MOST (Media Oriented Systems Transport) ⭐
+- Ethernet AVB/TSN ⭐⭐ (time-sensitive audio)
+- Multi-zone audio routing ⭐⭐⭐
+
+🎵 Bluetooth Audio ⭐⭐⭐
+- A2DP (Advanced Audio Distribution Profile) ⭐⭐⭐
+- HFP (Hands-Free Profile) ⭐⭐⭐
+- BlueZ stack ⭐⭐
+- Audio codec negotiation (SBC, AAC, aptX) ⭐⭐
+
+🎵 Android Audio Stack ⭐⭐⭐ (for Qualcomm)
+- AudioFlinger architecture ⭐⭐⭐
+- Audio HAL (Hardware Abstraction Layer) ⭐⭐⭐
+- Audio Policy Manager ⭐⭐⭐
+- HIDL/AIDL interfaces ⭐⭐⭐
+- Audio routing and mixing ⭐⭐⭐
