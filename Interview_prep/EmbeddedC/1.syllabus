@@ -1,0 +1,128 @@
+✅ C Language Syllabus for Embedded Interviews
+🎯 PRIORITY LEGEND: ⭐⭐⭐ = CRITICAL | ⭐⭐ = IMPORTANT | ⭐ = GOOD TO KNOW
+
+✔ Syntax & Structure ⭐⭐⭐
+C program structure, header files
+Preprocessing → Compilation → Assembly → Linking
+Object files, symbol tables
+Static vs dynamic linking
+Cross-compilation basics for embedded
+Preprocessor directives (#include, #define, macros)
+
+✔ Data Types
+Integer sizes, signedness
+char, ASCII, Unicode basics
+float, double, precision issues
+enum, typedef, struct, union
+
+✔ Operators
+Bitwise operators (very important)
+Shift operators — logical vs arithmetic
+Pre/post increment behavior
+
+✔ Pointer Basics
+Basics: pointer to int/char/float
+Void pointer
+Dangling pointer
+Wild pointer
+NULL pointer
+
+✔ Multi-level & Special Pointers
+Pointer to pointer
+Double/triple pointers
+Pointer to array vs array of pointers
+Function pointers
+Callback functions
+Difference between ptr++ and ++ptr
+
+✔ Arrays
+Static & dynamic arrays
+Multi-dimensional arrays
+
+✔ Strings
+strlen, strcpy, strncpy, strcmp, etc.
+
+✔ Structures
+Padding and alignment (very important)
+Packing (#pragma pack)
+Nested structures
+Structure vs typedef struct
+
+✔ Unions
+Memory sharing
+Use cases in embedded(To store register bits)
+Difference between struct & union
+Using bitfields to access hardware registers
+
+✔ Function basics
+Call by value vs call by reference
+Inline vs normal functions
+
+✔ Advanced
+Recursion
+Function pointers
+Re-entrant functions
+Static functions (internal linkage)
+Storage classes (static, auto, extern, register)
+
+✔ Memory Management
+Stack vs Heap
+malloc/calloc/realloc/free
+Memory leaks & fragmentation
+Segmentation faults
+Memory alignment
+Cache behavior
+Cache-friendly coding
+Locality of reference
+
+✔ Bit operations ⭐⭐⭐ EXTREMELY IMPORTANT
+Used for: audio codec registers, DSP control, I2C/SPI communication, audio format flags.
+Set/clear/toggle/test a bit
+Create bit masks
+Extract high/low nibbles
+Extract fields from registers
+Rotate left/right
+
+✔ Embedded System / Audio Specific C Concepts ⭐⭐⭐
+Volatile keyword ⭐⭐⭐
+Why needed for hardware registers (audio codec registers)
+Why needed for ISRs (audio DMA interrupts)
+Compiler optimization issues
+
+✔ const vs volatile ⭐⭐⭐
+✔ Memory-mapped I/O ⭐⭐⭐ (audio device registers)
+✔ Endianness: big vs little ⭐⭐⭐ (audio data format conversion)
+✔ Interrupt service routines (ISR) basics ⭐⭐⭐ (audio DMA callbacks)
+✔ Bare-metal vs RTOS differences ⭐⭐
+✔ DMA (Direct Memory Access) ⭐⭐⭐ (zero-copy audio buffer transfer)
+✔ Cache coherency ⭐⭐ (audio buffer consistency)
+
+
+✔ PROBLEMS :
+
+✔ String problems
+Reverse string
+Remove duplicates
+Implement strstr
+Palindrome checks
+
+✔ Pointer problems
+Swap using pointers
+Matrix operations
+Array of pointers
+
+✔ Bit manipulation problems
+Count set bits
+Reverse bits
+Detect power of 2
+Find missing/duplicate number
+
+✔ Memory simulation
+Implement malloc/free (simple model)
+
+✔ Audio-specific problems ⭐⭐⭐
+Circular/ring buffer implementation (MUST KNOW)
+Audio buffer queue management
+Sample format conversion (int16 to float)
+Endian conversion for audio data
+Multi-channel audio interleaving/de-interleaving

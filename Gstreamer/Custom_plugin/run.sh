@@ -1,0 +1,1 @@
+make && sudo cp *.so /usr/lib/x86_64-linux-gnu/gstreamer-1.0/ && gst-launch-1.0 filesrc location=california.wav ! wavparse ! audioconvert  ! loudnessFilter gain = 1.2 ! autoaudiosink

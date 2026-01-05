@@ -1,0 +1,73 @@
+5. Gstreamer
+>sudo apt-get install gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly 
+>sudo apt-get install gstreamer1.0-libav
+
+>gst-inspect-1.0
+Audio :
+>gst-inspect-1.0 audiotestsrc
+>gst-inspect-1.0 alsasink
+>gst-launch-1.0 audiotestsrc ! alsasink (default sine wave)
+>gst-launch-1.0 audiotestsrc wave=1 ! alsasink (square wave) //properties
+>gst-launch-1.0 audiotestsrc freq=300 ! alsasink 
+>gst-launch-1.0 audiotestsrc freq=300 volume=1 ! alsasink
+>gst-launch-1.0 audiotestsrc freq=300 volume=1 ! audio/x-raw,format=U8 ! alsasink //capibilities
+>gst-inspect-1.0 audioconvert
+>gst-launch-1.0 audiotestsrc freq=300 volume=1 ! audio/x-raw,format=U18LE ! audioconvert ! audio/x-raw,format=U8  ! alsasink
+
+>gst-launch-1.0 openalsrc ! audioconvert ! wavescope style=3 shader=2 ! videoconvert ! autovideosink
+
+>gst-launch-1.0 filesrc location=audio.mp3 ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+>gst-launch-1.0 filesrc location=/home/nanivade/Desktop/Presentation/audio.mp3 ! mpegaudioparse ! mpg123audiodec ! audioconvert ! volume volume=9 ! autoaudiosink
+>gst-launch-1.0 filesrc location=audio.mp3 ! mpegaudioparse ! mpg123audiodec ! audioconvert ! equalizer-3bands band0=12 ! autoaudiosink
+>gst-launch-1.0 filesrc location=audio.ogx ! oggdemux ! vorbisdec ! autoaudiosink
+>gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert! videoscale ! x264enc ! mp4mux -e ! filesink location=rvc.mp4
+
+>gst-play-1.0 audio.mp3
+
+Mic Capture :
+>gst-launch-1.0 alsasrc device=hw:1,0 ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+
+Video:
+>gst-inspect-1.0 videotestsrc
+>gst-inspect-1.0 ximagesink
+>gst-launch-1.0 videotestsrc ! ximagesink
+>gst-launch-1.0 videotestsrc pattern=11 ! ximagesink
+>gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw,format=BGR ! videoconvert ! video/x-raw, width=1000, height=1000, framerate=30/1 ! ximagesink
+
+>gst-inspect-1.0 v4l2src  
+>gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert! videoscale ! video/x-raw, width=600, height=600 ! autovideosink
+
+>gst-inspect-1.0 agingtv
+>gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert! videoscale ! video/x-raw, width=600, height=600 ! agingtv scratch-lines=20 ! ximagesink  //old tv filter module  
+>gst-launch-1.0 v4l2src contrast=100 brightness=100  ! videoconvert! videoscale ! video/x-raw, width=600, height=600 ! ximagesink //not working
+
+>gst-inspect-1.0 videobalance
+>gst-launch-1.0 v4l2src ! videoconvert! videoscale ! video/x-raw, width=600, height=600 ! videobalance contrast=1.4 brightness=0.1 saturation=1.3 ! autovideosink
+
+>gst-launch-1.0 v4l2src ! videoconvert! videoscale ! video/x-raw, width=600, height=600 ! tee name=t1 t1. ! queue ! videobalance contrast=1.4 brightness=0.1 saturation=1.3 ! ximagesink t1. ! queue ! videoconvert ! video/x-raw, width=600, height=600 ! ximagesink t1. ! queue ! agingtv scratch-lines=20 ! ximagesink
+>gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert! videoscale ! videoflip method=horizontal-flip ! ximagesink
+
+>sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev //install gst.h
+>g++ -o test gstreamer.cpp $(pkg-config --cflags --libs gstreamer-1.0)     //compile
+>./test
+
+filesrc : (open terminal were file is present)
+>gst-launch-1.0 filesrc location=video.mp4 ! decodebin ! tee name=t t. ! queue ! audioconvert ! goom ! autovideoconvert ! autovideosink t. ! queue ! audioconvert ! autoaudiosink
+>gst-launch-1.0 filesrc location=video.mp4 ! queue ! decodebin name=mux mux. ! queue ! autovideoconvert ! autovideosink mux. ! queue ! audioconvert ! autoaudiosink
+
+>gst-inspect-1.0 udpsrc //UDP streaming
+//monitor udp traffic
+>sudo tcpdump -i lo -n udp port 5000
+>ip addr show  or hostname -I
+
+>gst-launch-1.0 v4l2src  ! decodebin ! videoconvert ! x264enc ! rtph264pay ! udpsink host=10.171.138.203 port=5000   //tx
+>gst-launch-1.0 udpsrc port=5000 ! application/x-rtp ! rtph264depay ! avdec_h264 ! videoconvert ! autovideosink  //rx
+
+links : 
+https://sahilchachra.medium.com/all-you-want-to-get-started-with-gstreamer-in-python-2276d9ed548e
+https://gstreamer.freedesktop.org/documentation/application-development/highlevel/playback-components.html?gi-language=c
+
+OpenGL : 
+gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! glupload ! glcolorconvert ! gleffects_xray !  glimagesink
+
+
